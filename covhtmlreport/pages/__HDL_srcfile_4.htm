@@ -1,0 +1,81 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span>`<span class="keyattr">timescale</span>%s%1<span class="keyvalu">ns</span>/1<span class="keyvalu">ps</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span>`default_nettype%s%none<br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span>`<span class="linked">include</span>%s%<span class="literal">"Def_name.v"</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span><span class="keyword">module</span>%s%control_logic%s%#(<br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span>%s%%s%%s%%s%<span class="keyword">parameter</span>%s%DATA_WIDTH%s%=%s%8<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span>)(<br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PCLK,<br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PRESET_n,<br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span><br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%TDR_reg,<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%TCR_reg,<br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%TDR_WR_pulse,<br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span><br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>%s%[1:0]%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%Cks,<br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%Load_Tdr,<br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%count_start_value,<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%count_up_down,<br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%count_enable<br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>);<br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span><br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%s%%s%<span class="comment">//%s%=====%s%Registers%s%=====</span><br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%load_q,%s%load_qq;%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%sync%s%+%s%delay%s%cho%s%bit%s%LOAD</span><br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%load_tdr_r;%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%xung%s%Load%s%1%s%chu%s%k</span><br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%[DATA_WIDTH-1:0]%s%start_val_r;%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%gi%s%tr%s%np%s%vo%s%TCNT</span><br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span><br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span>%s%%s%<span class="comment">//%s%=====%s%Sequential%s%logic%s%(ng%s%b%s%hon%s%ton)%s%=====</span><br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span>%s%%s%<span class="keyword">always</span>%s%@(<span class="keyattr">posedge</span>%s%PCLK%s%<span class="keytype">or</span>%s%<span class="keyattr">negedge</span>%s%PRESET_n)%s%<span class="keyword">begin</span><br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>%s%(!PRESET_n)%s%<span class="keyword">begin</span><br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span>%s%%s%%s%%s%%s%%s%load_q%s%%s%%s%%s%%s%%s%&lt;=%s%1'b0;<br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span>%s%%s%%s%%s%%s%%s%load_qq%s%%s%%s%%s%%s%&lt;=%s%1'b0;<br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span>%s%%s%%s%%s%%s%%s%load_tdr_r%s%%s%&lt;=%s%1'b0;<br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%s%%s%%s%%s%%s%%s%start_val_r%s%&lt;=%s%{DATA_WIDTH{1'b0}};<br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span>%s%<span class="keyword">else</span>%s%<span class="keyword">begin</span><br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%sample%s%bit%s%LOAD</span><br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span>%s%%s%%s%%s%%s%%s%load_q%s%%s%&lt;=%s%TCR_reg[`TCR_load_bit];<br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span>%s%%s%%s%%s%%s%%s%load_qq%s%&lt;=%s%load_q;<br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span><br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%mc%s%nh%s%h%s%xung</span><br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span>%s%%s%%s%%s%%s%%s%load_tdr_r%s%&lt;=%s%1'b0;<br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span><br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%iu%s%kin%s%to%s%LOAD%s%(1%s%chu%s%k):</span><br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%1)%s%Khi%s%ghi%s%TDR%s%-&gt;%s%np%s%ngay%s%v%s%to%s%xung</span><br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(TDR_WR_pulse)%s%<span class="keyword">begin</span><br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%start_val_r%s%&lt;=%s%TDR_reg;<br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%load_tdr_r%s%%s%&lt;=%s%1'b1;<br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%2)%s%Khi%s%pht%s%hin%s%cnh%s%ln%s%LOAD%s%trong%s%TCR</span><br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">else</span>%s%<span class="keyword">if</span>%s%(load_q%s%&amp;%s%~load_qq)%s%<span class="keyword">begin</span><br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%Ly%s%gi%s%tr%s%ang%s%c%s%trong%s%TDR_reg%s%%s%np</span><br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%start_val_r%s%&lt;=%s%TDR_reg;<br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%load_tdr_r%s%%s%&lt;=%s%1'b1;<br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%khng%s%t%s%%s%i%s%start_val_r%s%%s%cc%s%trng%s%hp%s%khc</span><br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span>%s%%s%<span class="keyword">end</span><br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span><br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span>%s%%s%<span class="comment">//%s%=====%s%Kt%s%ni%s%ra%s%ngoi%s%=====</span><br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%Load_Tdr%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%=%s%load_tdr_r;<br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%count_start_value%s%=%s%start_val_r;<br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span><br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%Cks%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%=%s%TCR_reg[`TCR_Cks_1:`TCR_Cks_0];<br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%count_up_down%s%=%s%TCR_reg[`TCR_Up_Dw_bit];<br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span>%s%%s%<span class="keyword">assign</span>%s%count_enable%s%%s%=%s%TCR_reg[`TCR_En_bit];<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span><br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span><span class="keyword">endmodule</span><br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span><br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>`default_nettype%s%<span class="keyword">wire</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

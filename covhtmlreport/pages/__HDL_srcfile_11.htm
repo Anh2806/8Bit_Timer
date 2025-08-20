@@ -1,0 +1,339 @@
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
+</head>
+<body id="hdl2html">
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span>`<span class="keyattr">timescale</span>%s%1<span class="keyvalu">ns</span>/1<span class="keyvalu">ps</span><br/>
+<a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span>`<span class="linked">include</span>%s%<span class="literal">"Def_name.v"</span><br/>
+<a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><br/>
+<a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="keyword">module</span>%s%fake_over_under_flow;<br/>
+<a name="5"/><span style="color:red">%s%%s%%s%%s%%s%5%s%%s%</span>%s%%s%<span class="keyword">parameter</span>%s%ADDR_WIDTH%s%=%s%8;<br/>
+<a name="6"/><span style="color:red">%s%%s%%s%%s%%s%6%s%%s%</span>%s%%s%<span class="keyword">parameter</span>%s%DATA_WIDTH%s%=%s%8;<br/>
+<a name="7"/><span style="color:red">%s%%s%%s%%s%%s%7%s%%s%</span><br/>
+<a name="8"/><span style="color:red">%s%%s%%s%%s%%s%8%s%%s%</span>%s%%s%<span class="comment">//%s%APB%s%master%s%signals</span><br/>
+<a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PCLK;<br/>
+<a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PRESET_n;<br/>
+<a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PSEL;<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PWRITE;<br/>
+<a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PENABLE;<br/>
+<a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%[ADDR_WIDTH-1:0]%s%%s%%s%%s%%s%PADDR;<br/>
+<a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%%s%[DATA_WIDTH-1:0]%s%%s%%s%%s%%s%PWDATA;<br/>
+<a name="16"/><span style="color:red">%s%%s%%s%%s%16%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%%s%%s%PRDATA;<br/>
+<a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PREADY;<br/>
+<a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%PSLVERR;<br/>
+<a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span><br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span>%s%%s%<span class="comment">//%s%DUT%s%nets</span><br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%%s%%s%TDR_reg,%s%TCR_reg,%s%TSR_reg;<br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%TDR_WR_pulse;<br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%%s%%s%TCNT_Out;<br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%TMR_OVF,%s%TMR_UDF;<br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[1:0]%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%Cks;<br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%Load_Tdr;<br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%[DATA_WIDTH-1:0]%s%%s%%s%%s%%s%count_start_value;<br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%count_up_down;<br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%count_enable;<br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span>%s%%s%<span class="keyword">wire</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%Clock_counter;<br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span><br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span>%s%%s%<span class="comment">//%s%Instantiate%s%DUT</span><br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%s%%s%Rw_register%s%#(.ADDR_WIDTH(ADDR_WIDTH),%s%.DATA_WIDTH(DATA_WIDTH))%s%u_rw%s%(<br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span>%s%%s%%s%%s%.PCLK(PCLK),%s%.PRESET_n(PRESET_n),<br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%s%%s%%s%%s%.PSEL(PSEL),%s%.PWRITE(PWRITE),%s%.PENABLE(PENABLE),<br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span>%s%%s%%s%%s%.PADDR(PADDR),%s%.PWDATA(PWDATA),%s%.PRDATA(PRDATA),<br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span>%s%%s%%s%%s%.PREADY(PREADY),%s%.PSLVERR(PSLVERR),<br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span>%s%%s%%s%%s%.TDR_reg(TDR_reg),%s%.TCR_reg(TCR_reg),%s%.TSR_reg(TSR_reg),<br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span>%s%%s%%s%%s%.TDR_WR_pulse(TDR_WR_pulse),<br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span>%s%%s%%s%%s%.TCNT_Out(TCNT_Out),<br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span>%s%%s%%s%%s%.Set_OVF_pulse(TMR_OVF),%s%.Set_UDF_pulse(TMR_UDF)<br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span>%s%%s%);<br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span><br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span>%s%%s%control_logic%s%#(.DATA_WIDTH(DATA_WIDTH))%s%u_ctrl%s%(<br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span>%s%%s%%s%%s%.PCLK%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%(PCLK),<br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%s%%s%%s%%s%.PRESET_n%s%%s%%s%%s%%s%%s%(PRESET_n),<br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span>%s%%s%%s%%s%.TDR_reg%s%%s%%s%%s%%s%%s%%s%(TDR_reg),<br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span>%s%%s%%s%%s%.TCR_reg%s%%s%%s%%s%%s%%s%%s%(TCR_reg),<br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span>%s%%s%%s%%s%.TDR_WR_pulse%s%%s%(TDR_WR_pulse),<br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span>%s%%s%%s%%s%.Cks%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%(Cks),<br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span>%s%%s%%s%%s%.Load_Tdr%s%%s%%s%%s%%s%%s%(Load_Tdr),<br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span>%s%%s%%s%%s%.count_start_value%s%(count_start_value),<br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span>%s%%s%%s%%s%.count_up_down%s%(count_up_down),<br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%s%%s%%s%%s%.count_enable%s%%s%(count_enable)<br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%s%%s%);<br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span><br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span>%s%%s%select_clock%s%u_selclk%s%(.PCLK(PCLK),%s%.PRESET_n(PRESET_n),%s%.Cks(Cks),%s%.Clock_counter(Clock_counter));<br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span><br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%s%%s%timer_counter%s%#(.DATA_WIDTH(DATA_WIDTH))%s%u_cnt%s%(<br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span>%s%%s%%s%%s%.PCLK(PCLK),%s%.PRESET_n(PRESET_n),<br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span>%s%%s%%s%%s%.Clock_counter(Clock_counter),<br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span>%s%%s%%s%%s%.count_start_value(count_start_value),<br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span>%s%%s%%s%%s%.count_load(Load_Tdr),<br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span>%s%%s%%s%%s%.count_enable(count_enable),<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span>%s%%s%%s%%s%.count_up_down(count_up_down),<br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span>%s%%s%%s%%s%.TCNT_Out(TCNT_Out),<br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span>%s%%s%%s%%s%.Set_OVF_pulse(TMR_OVF),%s%.Set_UDF_pulse(TMR_UDF)<br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>%s%%s%);<br/>
+<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span><br/>
+<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span>%s%%s%<span class="comment">//%s%Clock%s%/%s%Reset</span><br/>
+<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span>%s%%s%<span class="keyword">initial</span>%s%PCLK%s%=%s%0;<br/>
+<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span>%s%%s%<span class="keyword">always</span>%s%#5%s%PCLK%s%=%s%~PCLK;%s%<span class="comment">//%s%10ns%s%period</span><br/>
+<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span><br/>
+<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span>%s%%s%<span class="comment">//%s%Monitor%s%pulses%s%from%s%timer%s%(help%s%debug)</span><br/>
+<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span>%s%%s%<span class="keyword">always</span>%s%@(<span class="keyattr">posedge</span>%s%PCLK)%s%<span class="keyword">begin</span><br/>
+<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>%s%(TMR_OVF)%s%$display(<span class="literal">"%0t:%s%Set_OVF_pulse%s%asserted"</span>,%s%$<span class="keyword">time</span>);<br/>
+<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span>%s%%s%%s%%s%<span class="keyword">if</span>%s%(TMR_UDF)%s%$display(<span class="literal">"%0t:%s%Set_UDF_pulse%s%asserted"</span>,%s%$<span class="keyword">time</span>);<br/>
+<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span>%s%%s%<span class="keyword">end</span><br/>
+<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span><br/>
+<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%gen_reset;<br/>
+<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span>%s%%s%%s%%s%%s%%s%PRESET_n%s%=%s%0;<br/>
+<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%=%s%0;%s%PWRITE%s%=%s%0;%s%PENABLE%s%=%s%0;<br/>
+<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span>%s%%s%%s%%s%%s%%s%PADDR%s%=%s%{ADDR_WIDTH{1'b0}};%s%PWDATA%s%=%s%{DATA_WIDTH{1'b0}};<br/>
+<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(5)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span>%s%%s%%s%%s%%s%%s%PRESET_n%s%=%s%1;<br/>
+<a name="87"/><span style="color:red">%s%%s%%s%%s%87%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(2)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span><br/>
+<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span>%s%%s%<span class="comment">//%s%----------------%s%APB%s%helpers%s%----------------</span><br/>
+<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%apb_write_wait;<br/>
+<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[ADDR_WIDTH-1:0]%s%addr;<br/>
+<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[DATA_WIDTH-1:0]%s%data;<br/>
+<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%1;%s%PWRITE%s%&lt;=%s%1;%s%PADDR%s%&lt;=%s%addr;%s%PWDATA%s%&lt;=%s%data;%s%PENABLE%s%&lt;=%s%0;<br/>
+<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span>%s%%s%%s%%s%%s%%s%PENABLE%s%&lt;=%s%1;<br/>
+<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">while</span>%s%(!PREADY)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%0;%s%PWRITE%s%&lt;=%s%0;%s%PENABLE%s%&lt;=%s%0;%s%PADDR%s%&lt;=%s%{ADDR_WIDTH{1'b0}};%s%PWDATA%s%&lt;=%s%{DATA_WIDTH{1'b0}};<br/>
+<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span><br/>
+<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span>%s%%s%<span class="comment">//%s%dng%s%cho%s%coverage%s%iu%s%kin%s%(PREADY==0)%s%nu%s%RTL%s%c%s%wait-state</span><br/>
+<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%apb_write_nowait;<br/>
+<a name="108"/><span style="color:red">%s%%s%%s%108%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[ADDR_WIDTH-1:0]%s%addr;<br/>
+<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[DATA_WIDTH-1:0]%s%data;<br/>
+<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span>%s%%s%%s%%s%<span class="keyword">reg</span>%s%sample_pready;<br/>
+<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%1;%s%PWRITE%s%&lt;=%s%1;%s%PADDR%s%&lt;=%s%addr;%s%PWDATA%s%&lt;=%s%data;%s%PENABLE%s%&lt;=%s%1;<br/>
+<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span>%s%%s%%s%%s%%s%%s%sample_pready%s%=%s%PREADY;<br/>
+<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(!sample_pready)%s%$display(<span class="literal">"apb_write_nowait:%s%PREADY==0%s%at%s%addr=0x%0h%s%(coverage%s%hit)"</span>,%s%addr);<br/>
+<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%0;%s%PWRITE%s%&lt;=%s%0;%s%PENABLE%s%&lt;=%s%0;<br/>
+<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span><br/>
+<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%apb_read_wait;<br/>
+<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[ADDR_WIDTH-1:0]%s%addr;<br/>
+<a name="124"/><span style="color:red">%s%%s%%s%124%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%[DATA_WIDTH-1:0]%s%data;<br/>
+<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span>%s%%s%%s%%s%<span class="keyword">output</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%pslverr;<br/>
+<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%1;%s%PWRITE%s%&lt;=%s%0;%s%PADDR%s%&lt;=%s%addr;%s%PENABLE%s%&lt;=%s%0;<br/>
+<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span>%s%%s%%s%%s%%s%%s%PENABLE%s%&lt;=%s%1;<br/>
+<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">while</span>%s%(!PREADY)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="132"/><span style="color:red">%s%%s%%s%132%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span>%s%%s%%s%%s%%s%%s%data%s%=%s%PRDATA;<br/>
+<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span>%s%%s%%s%%s%%s%%s%pslverr%s%=%s%PSLVERR;<br/>
+<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span>%s%%s%%s%%s%%s%%s%PSEL%s%&lt;=%s%0;%s%PENABLE%s%&lt;=%s%0;%s%PADDR%s%&lt;=%s%{ADDR_WIDTH{1'b0}};<br/>
+<a name="136"/><span style="color:red">%s%%s%%s%136%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="137"/><span style="color:red">%s%%s%%s%137%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="138"/><span style="color:red">%s%%s%%s%138%s%%s%</span><br/>
+<a name="139"/><span style="color:red">%s%%s%%s%139%s%%s%</span>%s%%s%<span class="comment">//%s%Compose%s%TCR%s%byte%s%(LOAD%s%bit%s%dng%s%macro%s%lowercase%s%sn%s%c)</span><br/>
+<a name="140"/><span style="color:red">%s%%s%%s%140%s%%s%</span>%s%%s%<span class="keyword">function</span>%s%[7:0]%s%make_tcr;<br/>
+<a name="141"/><span style="color:red">%s%%s%%s%141%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[1:0]%s%cks_bits;<br/>
+<a name="142"/><span style="color:red">%s%%s%%s%142%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%en;<br/>
+<a name="143"/><span style="color:red">%s%%s%%s%143%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%down;<br/>
+<a name="144"/><span style="color:red">%s%%s%%s%144%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%load_bit;<br/>
+<a name="145"/><span style="color:red">%s%%s%%s%145%s%%s%</span>%s%%s%%s%%s%<span class="keyword">reg</span>%s%[7:0]%s%t;<br/>
+<a name="146"/><span style="color:red">%s%%s%%s%146%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="147"/><span style="color:red">%s%%s%%s%147%s%%s%</span>%s%%s%%s%%s%%s%%s%t%s%=%s%8'h00;<br/>
+<a name="148"/><span style="color:red">%s%%s%%s%148%s%%s%</span>%s%%s%%s%%s%%s%%s%t[`TCR_Cks_1:`TCR_Cks_0]%s%=%s%cks_bits;<br/>
+<a name="149"/><span style="color:red">%s%%s%%s%149%s%%s%</span>%s%%s%%s%%s%%s%%s%t[`TCR_En_bit]%s%=%s%en;<br/>
+<a name="150"/><span style="color:red">%s%%s%%s%150%s%%s%</span>%s%%s%%s%%s%%s%%s%t[`TCR_Up_Dw_bit]%s%=%s%down;<br/>
+<a name="151"/><span style="color:red">%s%%s%%s%151%s%%s%</span>%s%%s%%s%%s%%s%%s%t[`TCR_load_bit]%s%=%s%load_bit;<br/>
+<a name="152"/><span style="color:red">%s%%s%%s%152%s%%s%</span>%s%%s%%s%%s%%s%%s%make_tcr%s%=%s%t;<br/>
+<a name="153"/><span style="color:red">%s%%s%%s%153%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="154"/><span style="color:red">%s%%s%%s%154%s%%s%</span>%s%%s%<span class="keyword">endfunction</span><br/>
+<a name="155"/><span style="color:red">%s%%s%%s%155%s%%s%</span><br/>
+<a name="156"/><span style="color:red">%s%%s%%s%156%s%%s%</span>%s%%s%<span class="comment">//%s%Helper:%s%toggle%s%LOAD%s%%s%TCNT%s%:=%s%TDR%s%(EN%s%c%s%th%s%0%s%hoc%s%1)</span><br/>
+<a name="157"/><span style="color:red">%s%%s%%s%157%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%load_from_tdr;<br/>
+<a name="158"/><span style="color:red">%s%%s%%s%158%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%[7:0]%s%val;<br/>
+<a name="159"/><span style="color:red">%s%%s%%s%159%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%dir_down;%s%<span class="comment">//%s%1:%s%down,%s%0:%s%up</span><br/>
+<a name="160"/><span style="color:red">%s%%s%%s%160%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%en_bit;%s%%s%%s%<span class="comment">//%s%0:%s%disabled,%s%1:%s%enabled</span><br/>
+<a name="161"/><span style="color:red">%s%%s%%s%161%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="162"/><span style="color:red">%s%%s%%s%162%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TDR_ADDR,%s%val);<br/>
+<a name="163"/><span style="color:red">%s%%s%%s%163%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TCR_ADDR,%s%make_tcr(2'b00,%s%en_bit,%s%dir_down,%s%1'b1));%s%<span class="comment">//%s%LOAD=1</span><br/>
+<a name="164"/><span style="color:red">%s%%s%%s%164%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="165"/><span style="color:red">%s%%s%%s%165%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TCR_ADDR,%s%make_tcr(2'b00,%s%en_bit,%s%dir_down,%s%1'b0));%s%<span class="comment">//%s%LOAD=0</span><br/>
+<a name="166"/><span style="color:red">%s%%s%%s%166%s%%s%</span>%s%%s%%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="167"/><span style="color:red">%s%%s%%s%167%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="168"/><span style="color:red">%s%%s%%s%168%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="169"/><span style="color:red">%s%%s%%s%169%s%%s%</span><br/>
+<a name="170"/><span style="color:red">%s%%s%%s%170%s%%s%</span>%s%%s%<span class="comment">//%s%----------------%s%Tests%s%----------------</span><br/>
+<a name="171"/><span style="color:red">%s%%s%%s%171%s%%s%</span>%s%%s%<span class="keyword">reg</span>%s%[DATA_WIDTH-1:0]%s%data_r;%s%<span class="keyword">reg</span>%s%err;<br/>
+<a name="172"/><span style="color:red">%s%%s%%s%172%s%%s%</span><br/>
+<a name="173"/><span style="color:red">%s%%s%%s%173%s%%s%</span>%s%%s%<span class="comment">//%s%helper:%s%check%s%TSR%s%flags%s%against%s%expected%s%values</span><br/>
+<a name="174"/><span style="color:red">%s%%s%%s%174%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%check_flags;<br/>
+<a name="175"/><span style="color:red">%s%%s%%s%175%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%expect_ovf;<br/>
+<a name="176"/><span style="color:red">%s%%s%%s%176%s%%s%</span>%s%%s%%s%%s%<span class="keyword">input</span>%s%expect_udf;<br/>
+<a name="177"/><span style="color:red">%s%%s%%s%177%s%%s%</span>%s%%s%%s%%s%<span class="keyword">reg</span>%s%[DATA_WIDTH-1:0]%s%tsr;<br/>
+<a name="178"/><span style="color:red">%s%%s%%s%178%s%%s%</span>%s%%s%%s%%s%<span class="keyword">reg</span>%s%pslv;<br/>
+<a name="179"/><span style="color:red">%s%%s%%s%179%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="180"/><span style="color:red">%s%%s%%s%180%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_read_wait(`TSR_ADDR,%s%tsr,%s%pslv);<br/>
+<a name="181"/><span style="color:red">%s%%s%%s%181%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"%s%%s%TSR%s%read%s%=%s%0x%0h%s%%s%OVF=%b%s%%s%UDF=%b%s%%s%PSLVERR=%b"</span>,%s%tsr,%s%tsr[`TMR_OVF_bit],%s%tsr[`TMR_UDF_bit],%s%pslv);<br/>
+<a name="182"/><span style="color:red">%s%%s%%s%182%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(tsr[`TMR_OVF_bit]%s%!==%s%expect_ovf)%s%$display(<span class="literal">"%s%%s%&gt;&gt;&gt;%s%OVF%s%MISMATCH:%s%expected%s%%0d"</span>,%s%expect_ovf);<br/>
+<a name="183"/><span style="color:red">%s%%s%%s%183%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(tsr[`TMR_UDF_bit]%s%!==%s%expect_udf)%s%$display(<span class="literal">"%s%%s%&gt;&gt;&gt;%s%UDF%s%MISMATCH:%s%expected%s%%0d"</span>,%s%expect_udf);<br/>
+<a name="184"/><span style="color:red">%s%%s%%s%184%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%((tsr[`TMR_OVF_bit]%s%===%s%expect_ovf)%s%&amp;&amp;%s%(tsr[`TMR_UDF_bit]%s%===%s%expect_udf))<br/>
+<a name="185"/><span style="color:red">%s%%s%%s%185%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%$display(<span class="literal">"%s%%s%Flags%s%OK%s%(matches%s%expected)"</span>);<br/>
+<a name="186"/><span style="color:red">%s%%s%%s%186%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="187"/><span style="color:red">%s%%s%%s%187%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="188"/><span style="color:red">%s%%s%%s%188%s%%s%</span><br/>
+<a name="189"/><span style="color:red">%s%%s%%s%189%s%%s%</span>%s%%s%<span class="comment">//%s%1)%s%Fake%s%UNDERFLOW:%s%EN=0,%s%down,%s%load%s%0%s%ri%s%255%s%-&gt;%s%UDF%s%khng%s%c%s%set</span><br/>
+<a name="190"/><span style="color:red">%s%%s%%s%190%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%run_fake_underflow;<br/>
+<a name="191"/><span style="color:red">%s%%s%%s%191%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="192"/><span style="color:red">%s%%s%%s%192%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[fake_underflow]%s%start"</span>);<br/>
+<a name="193"/><span style="color:red">%s%%s%%s%193%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"%s%%s%Macro%s%mapping:%s%TMR_OVF_bit=%0d%s%%s%TMR_UDF_bit=%0d"</span>,%s%`TMR_OVF_bit,%s%`TMR_UDF_bit);<br/>
+<a name="194"/><span style="color:red">%s%%s%%s%194%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TCR_ADDR,%s%make_tcr(2'b00,%s%1'b0,%s%1'b1,%s%1'b0));%s%<span class="comment">//%s%EN=0,%s%down</span><br/>
+<a name="195"/><span style="color:red">%s%%s%%s%195%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h00,%s%1'b1,%s%1'b0);<br/>
+<a name="196"/><span style="color:red">%s%%s%%s%196%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'hFF,%s%1'b1,%s%1'b0);<br/>
+<a name="197"/><span style="color:red">%s%%s%%s%197%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_read_wait(`TSR_ADDR,%s%data_r,%s%err);<br/>
+<a name="198"/><span style="color:red">%s%%s%%s%198%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(data_r[`TMR_UDF_bit])%s%$display(<span class="literal">"[fake_underflow]%s%**UNEXPECTED**%s%UDF=1"</span>);<br/>
+<a name="199"/><span style="color:red">%s%%s%%s%199%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">else</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[fake_underflow]%s%PASS:%s%UDF=0"</span>);<br/>
+<a name="200"/><span style="color:red">%s%%s%%s%200%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="201"/><span style="color:red">%s%%s%%s%201%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="202"/><span style="color:red">%s%%s%%s%202%s%%s%</span><br/>
+<a name="203"/><span style="color:red">%s%%s%%s%203%s%%s%</span>%s%%s%<span class="comment">//%s%2)%s%Fake%s%OVERFLOW:%s%EN=0,%s%up,%s%load%s%255%s%ri%s%0%s%-&gt;%s%OVF%s%khng%s%c%s%set</span><br/>
+<a name="204"/><span style="color:red">%s%%s%%s%204%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%run_fake_overflow;<br/>
+<a name="205"/><span style="color:red">%s%%s%%s%205%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="206"/><span style="color:red">%s%%s%%s%206%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[fake_overflow]%s%start"</span>);<br/>
+<a name="207"/><span style="color:red">%s%%s%%s%207%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TCR_ADDR,%s%make_tcr(2'b00,%s%1'b0,%s%1'b0,%s%1'b0));%s%<span class="comment">//%s%EN=0,%s%up</span><br/>
+<a name="208"/><span style="color:red">%s%%s%%s%208%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'hFF,%s%1'b0,%s%1'b0);<br/>
+<a name="209"/><span style="color:red">%s%%s%%s%209%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h00,%s%1'b0,%s%1'b0);<br/>
+<a name="210"/><span style="color:red">%s%%s%%s%210%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_read_wait(`TSR_ADDR,%s%data_r,%s%err);<br/>
+<a name="211"/><span style="color:red">%s%%s%%s%211%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">if</span>%s%(data_r[`TMR_OVF_bit])%s%$display(<span class="literal">"[fake_overflow]%s%**UNEXPECTED**%s%OVF=1"</span>);<br/>
+<a name="212"/><span style="color:red">%s%%s%%s%212%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">else</span>%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[fake_overflow]%s%PASS:%s%OVF=0"</span>);<br/>
+<a name="213"/><span style="color:red">%s%%s%%s%213%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="214"/><span style="color:red">%s%%s%%s%214%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="215"/><span style="color:red">%s%%s%%s%215%s%%s%</span><br/>
+<a name="216"/><span style="color:red">%s%%s%%s%216%s%%s%</span>%s%%s%<span class="comment">//%s%3)%s%Thc%s%s%s%m%s%%s%cover%s%nhnh%s%count_up%s%/%s%count_down%s%v%s%wrap</span><br/>
+<a name="217"/><span style="color:red">%s%%s%%s%217%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%run_real_count_branches;<br/>
+<a name="218"/><span style="color:red">%s%%s%%s%218%s%%s%</span>%s%%s%%s%%s%<span class="keyword">integer</span>%s%i;<br/>
+<a name="219"/><span style="color:red">%s%%s%%s%219%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="220"/><span style="color:red">%s%%s%%s%220%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[real_count]%s%exercise%s%branches%s%up/non-wrap,%s%up/wrap,%s%down/non-wrap,%s%down/wrap"</span>);<br/>
+<a name="221"/><span style="color:red">%s%%s%%s%221%s%%s%</span><br/>
+<a name="222"/><span style="color:red">%s%%s%%s%222%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(a)%s%Count%s%UP%s%non-wrap%s%(start=0x10%s%-&gt;%s%+4)</span><br/>
+<a name="223"/><span style="color:red">%s%%s%%s%223%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h10,%s%1'b0,%s%1'b1);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%up</span><br/>
+<a name="224"/><span style="color:red">%s%%s%%s%224%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(10)%s%@(<span class="keyattr">posedge</span>%s%PCLK);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%ch%s%ng%s%h%s%ni</span><br/>
+<a name="225"/><span style="color:red">%s%%s%%s%225%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_read_wait(`TCNT_ADDR,%s%data_r,%s%err);<br/>
+<a name="226"/><span style="color:red">%s%%s%%s%226%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count]%s%up/non-wrap%s%TCNT=0x%0h"</span>,%s%data_r);<br/>
+<a name="227"/><span style="color:red">%s%%s%%s%227%s%%s%</span><br/>
+<a name="228"/><span style="color:red">%s%%s%%s%228%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(b)%s%Count%s%UP%s%wrap%s%(start=0xFF%s%-&gt;%s%wrap%s%v%s%0,%s%OVF%s%pulse)</span><br/>
+<a name="229"/><span style="color:red">%s%%s%%s%229%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'hFF,%s%1'b0,%s%1'b1);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%up</span><br/>
+<a name="230"/><span style="color:red">%s%%s%%s%230%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(20)%s%@(<span class="keyattr">posedge</span>%s%PCLK);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%tng%s%ch%s%%s%chc%s%wrap</span><br/>
+<a name="231"/><span style="color:red">%s%%s%%s%231%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count]%s%up/wrap%s%-%s%check%s%flags%s%(expect%s%OVF=1)"</span>);<br/>
+<a name="232"/><span style="color:red">%s%%s%%s%232%s%%s%</span>%s%%s%%s%%s%%s%%s%check_flags(1,0);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%mong%s%OVF=1,%s%UDF=0</span><br/>
+<a name="233"/><span style="color:red">%s%%s%%s%233%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TSR_ADDR,%s%(1&lt;&lt;`TMR_OVF_bit));%s%<span class="comment">//%s%clear%s%OVF</span><br/>
+<a name="234"/><span style="color:red">%s%%s%%s%234%s%%s%</span><br/>
+<a name="235"/><span style="color:red">%s%%s%%s%235%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(c)%s%Count%s%DOWN%s%non-wrap%s%(start=0x10%s%-&gt;%s%-4)</span><br/>
+<a name="236"/><span style="color:red">%s%%s%%s%236%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h10,%s%1'b1,%s%1'b1);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%down</span><br/>
+<a name="237"/><span style="color:red">%s%%s%%s%237%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(10)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="238"/><span style="color:red">%s%%s%%s%238%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_read_wait(`TCNT_ADDR,%s%data_r,%s%err);<br/>
+<a name="239"/><span style="color:red">%s%%s%%s%239%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count]%s%down/non-wrap%s%TCNT=0x%0h"</span>,%s%data_r);<br/>
+<a name="240"/><span style="color:red">%s%%s%%s%240%s%%s%</span><br/>
+<a name="241"/><span style="color:red">%s%%s%%s%241%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(d)%s%Count%s%DOWN%s%wrap%s%(start=0x00%s%-&gt;%s%wrap%s%v%s%0xFF,%s%UDF%s%pulse)</span><br/>
+<a name="242"/><span style="color:red">%s%%s%%s%242%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h00,%s%1'b1,%s%1'b1);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%down</span><br/>
+<a name="243"/><span style="color:red">%s%%s%%s%243%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(20)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="244"/><span style="color:red">%s%%s%%s%244%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count]%s%down/wrap%s%-%s%check%s%flags%s%(expect%s%UDF=1)"</span>);<br/>
+<a name="245"/><span style="color:red">%s%%s%%s%245%s%%s%</span>%s%%s%%s%%s%%s%%s%check_flags(0,1);%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%mong%s%OVF=0,%s%UDF=1</span><br/>
+<a name="246"/><span style="color:red">%s%%s%%s%246%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TSR_ADDR,%s%(1&lt;&lt;`TMR_UDF_bit));%s%<span class="comment">//%s%clear%s%UDF</span><br/>
+<a name="247"/><span style="color:red">%s%%s%%s%247%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="248"/><span style="color:red">%s%%s%%s%248%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="249"/><span style="color:red">%s%%s%%s%249%s%%s%</span><br/>
+<a name="250"/><span style="color:red">%s%%s%%s%250%s%%s%</span>%s%%s%<span class="comment">//%s%4)%s%Ghi%s%a%s%ch%s%invalid%s%%s%cover%s%default/PSLVERR</span><br/>
+<a name="251"/><span style="color:red">%s%%s%%s%251%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%hit_invalid_addr_default;<br/>
+<a name="252"/><span style="color:red">%s%%s%%s%252%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="253"/><span style="color:red">%s%%s%%s%253%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[default_case]%s%write%s%invalid%s%address%s%0xAA"</span>);<br/>
+<a name="254"/><span style="color:red">%s%%s%%s%254%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(8'hAA,%s%8'h5A);%s%<span class="comment">//%s%khng%s%trng%s%TDR/TCR/TSR%s%-&gt;%s%default</span><br/>
+<a name="255"/><span style="color:red">%s%%s%%s%255%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="256"/><span style="color:red">%s%%s%%s%256%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="257"/><span style="color:red">%s%%s%%s%257%s%%s%</span><br/>
+<a name="258"/><span style="color:red">%s%%s%%s%258%s%%s%</span>%s%%s%<span class="comment">//%s%5)%s%Th%s%cover%s%iu%s%kin%s%PREADY==0%s%(nu%s%RTL%s%c%s%wait-state)</span><br/>
+<a name="259"/><span style="color:red">%s%%s%%s%259%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%try_pready_zero;<br/>
+<a name="260"/><span style="color:red">%s%%s%%s%260%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="261"/><span style="color:red">%s%%s%%s%261%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[pready_zero]%s%try%s%nowait%s%write"</span>);<br/>
+<a name="262"/><span style="color:red">%s%%s%%s%262%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_nowait(`TDR_ADDR,%s%8'h33);<br/>
+<a name="263"/><span style="color:red">%s%%s%%s%263%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="264"/><span style="color:red">%s%%s%%s%264%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="265"/><span style="color:red">%s%%s%%s%265%s%%s%</span><br/>
+<a name="266"/><span style="color:red">%s%%s%%s%266%s%%s%</span>%s%%s%<span class="comment">//%s%---%s%Exercise%s%CKS%s%values%s%so%s%select_clock%s%is%s%covered%s%---</span><br/>
+<a name="267"/><span style="color:red">%s%%s%%s%267%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%cycle_through_cks;<br/>
+<a name="268"/><span style="color:red">%s%%s%%s%268%s%%s%</span>%s%%s%%s%%s%<span class="keyword">integer</span>%s%ci;%s%<span class="keyword">reg</span>%s%[DATA_WIDTH-1:0]%s%rd;%s%<span class="keyword">reg</span>%s%e;<br/>
+<a name="269"/><span style="color:red">%s%%s%%s%269%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="270"/><span style="color:red">%s%%s%%s%270%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n---%s%cycle_through_cks:%s%exercise%s%CKS%s%00..11%s%---"</span>);<br/>
+<a name="271"/><span style="color:red">%s%%s%%s%271%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">for</span>%s%(ci=0;%s%ci&lt;4;%s%ci=ci+1)%s%<span class="keyword">begin</span><br/>
+<a name="272"/><span style="color:red">%s%%s%%s%272%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%write%s%TCR%s%with%s%CKS=ci,%s%EN=0%s%(just%s%set%s%clk%s%selection)</span><br/>
+<a name="273"/><span style="color:red">%s%%s%%s%273%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%apb_write_wait(`TCR_ADDR,%s%make_tcr(ci[1:0],%s%1'b0,%s%1'b0,%s%1'b0));<br/>
+<a name="274"/><span style="color:red">%s%%s%%s%274%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%short%s%wait%s%to%s%let%s%select_clock%s%sample</span><br/>
+<a name="275"/><span style="color:red">%s%%s%%s%275%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(6)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="276"/><span style="color:red">%s%%s%%s%276%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%read%s%TCNT%s%to%s%cause%s%bus%s%activity%s%and%s%give%s%coverage%s%in%s%read%s%path</span><br/>
+<a name="277"/><span style="color:red">%s%%s%%s%277%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%apb_read_wait(`TCNT_ADDR,%s%rd,%s%e);<br/>
+<a name="278"/><span style="color:red">%s%%s%%s%278%s%%s%</span>%s%%s%%s%%s%%s%%s%%s%%s%$display(<span class="literal">"%s%%s%CKS=%02b%s%=&gt;%s%TCNT_read=0x%0h"</span>,%s%ci[1:0],%s%rd);<br/>
+<a name="279"/><span style="color:red">%s%%s%%s%279%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="280"/><span style="color:red">%s%%s%%s%280%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="281"/><span style="color:red">%s%%s%%s%281%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="282"/><span style="color:red">%s%%s%%s%282%s%%s%</span><br/>
+<a name="283"/><span style="color:red">%s%%s%%s%283%s%%s%</span>%s%%s%<span class="comment">//%s%Tng%s%thi%s%gian%s%ch%s%%s%tht%s%s%s%gy%s%OVF/UDF</span><br/>
+<a name="284"/><span style="color:red">%s%%s%%s%284%s%%s%</span>%s%%s%<span class="keyword">task</span>%s%run_real_count_branches_long;<br/>
+<a name="285"/><span style="color:red">%s%%s%%s%285%s%%s%</span>%s%%s%%s%%s%<span class="keyword">integer</span>%s%i;<br/>
+<a name="286"/><span style="color:red">%s%%s%%s%286%s%%s%</span>%s%%s%%s%%s%<span class="keyword">begin</span><br/>
+<a name="287"/><span style="color:red">%s%%s%%s%287%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"\n[real_count_long]%s%exercise%s%more%s%cycles%s%for%s%wrap"</span>);<br/>
+<a name="288"/><span style="color:red">%s%%s%%s%288%s%%s%</span><br/>
+<a name="289"/><span style="color:red">%s%%s%%s%289%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(a)%s%Count%s%UP%s%wrap%s%(start=0xFF%s%-&gt;%s%wrap%s%to%s%0)</span><br/>
+<a name="290"/><span style="color:red">%s%%s%%s%290%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'hFF,%s%1'b0,%s%1'b1);%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%up</span><br/>
+<a name="291"/><span style="color:red">%s%%s%%s%291%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%increase%s%wait%s%to%s%allow%s%several%s%internal%s%clocks%s%to%s%tick%s%and%s%cause%s%wrap</span><br/>
+<a name="292"/><span style="color:red">%s%%s%%s%292%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(80)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="293"/><span style="color:red">%s%%s%%s%293%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count_long]%s%up/wrap%s%-%s%check%s%flags%s%(expect%s%OVF=1)"</span>);<br/>
+<a name="294"/><span style="color:red">%s%%s%%s%294%s%%s%</span>%s%%s%%s%%s%%s%%s%check_flags(1,0);<br/>
+<a name="295"/><span style="color:red">%s%%s%%s%295%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TSR_ADDR,%s%(1%s%&lt;&lt;%s%`TMR_OVF_bit));%s%<span class="comment">//%s%clear</span><br/>
+<a name="296"/><span style="color:red">%s%%s%%s%296%s%%s%</span><br/>
+<a name="297"/><span style="color:red">%s%%s%%s%297%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="comment">//%s%(b)%s%Count%s%DOWN%s%wrap%s%(start=0x00%s%-&gt;%s%wrap%s%to%s%0xFF)</span><br/>
+<a name="298"/><span style="color:red">%s%%s%%s%298%s%%s%</span>%s%%s%%s%%s%%s%%s%load_from_tdr(8'h00,%s%1'b1,%s%1'b1);%s%%s%%s%%s%<span class="comment">//%s%EN=1,%s%down</span><br/>
+<a name="299"/><span style="color:red">%s%%s%%s%299%s%%s%</span>%s%%s%%s%%s%%s%%s%<span class="keyword">repeat</span>%s%(80)%s%@(<span class="keyattr">posedge</span>%s%PCLK);<br/>
+<a name="300"/><span style="color:red">%s%%s%%s%300%s%%s%</span>%s%%s%%s%%s%%s%%s%$display(<span class="literal">"[real_count_long]%s%down/wrap%s%-%s%check%s%flags%s%(expect%s%UDF=1)"</span>);<br/>
+<a name="301"/><span style="color:red">%s%%s%%s%301%s%%s%</span>%s%%s%%s%%s%%s%%s%check_flags(0,1);<br/>
+<a name="302"/><span style="color:red">%s%%s%%s%302%s%%s%</span>%s%%s%%s%%s%%s%%s%apb_write_wait(`TSR_ADDR,%s%(1%s%&lt;&lt;%s%`TMR_UDF_bit));%s%<span class="comment">//%s%clear</span><br/>
+<a name="303"/><span style="color:red">%s%%s%%s%303%s%%s%</span>%s%%s%%s%%s%<span class="keyword">end</span><br/>
+<a name="304"/><span style="color:red">%s%%s%%s%304%s%%s%</span>%s%%s%<span class="keyword">endtask</span><br/>
+<a name="305"/><span style="color:red">%s%%s%%s%305%s%%s%</span><br/>
+<a name="306"/><span style="color:red">%s%%s%%s%306%s%%s%</span>%s%%s%<span class="comment">//%s%----------------%s%Main%s%----------------</span><br/>
+<a name="307"/><span style="color:red">%s%%s%%s%307%s%%s%</span>%s%%s%<span class="keyword">initial</span>%s%<span class="keyword">begin</span><br/>
+<a name="308"/><span style="color:red">%s%%s%%s%308%s%%s%</span>%s%%s%%s%%s%gen_reset();<br/>
+<a name="309"/><span style="color:red">%s%%s%%s%309%s%%s%</span><br/>
+<a name="310"/><span style="color:red">%s%%s%%s%310%s%%s%</span>%s%%s%%s%%s%run_fake_underflow();%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=0%s%path,%s%UDF%s%khng%s%bt</span><br/>
+<a name="311"/><span style="color:red">%s%%s%%s%311%s%%s%</span>%s%%s%%s%%s%run_fake_overflow();%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%EN=0%s%path,%s%OVF%s%khng%s%bt</span><br/>
+<a name="312"/><span style="color:red">%s%%s%%s%312%s%%s%</span><br/>
+<a name="313"/><span style="color:red">%s%%s%%s%313%s%%s%</span>%s%%s%%s%%s%<span class="comment">//%s%exercise%s%select_clock%s%CKS%s%choices</span><br/>
+<a name="314"/><span style="color:red">%s%%s%%s%314%s%%s%</span>%s%%s%%s%%s%cycle_through_cks();<br/>
+<a name="315"/><span style="color:red">%s%%s%%s%315%s%%s%</span><br/>
+<a name="316"/><span style="color:red">%s%%s%%s%316%s%%s%</span>%s%%s%%s%%s%<span class="comment">//%s%dng%s%bn%s%di%s%hn%s%%s%chc%s%wrap%s%xut%s%hin</span><br/>
+<a name="317"/><span style="color:red">%s%%s%%s%317%s%%s%</span>%s%%s%%s%%s%run_real_count_branches();%s%%s%%s%<span class="comment">//%s%ngn</span><br/>
+<a name="318"/><span style="color:red">%s%%s%%s%318%s%%s%</span>%s%%s%%s%%s%run_real_count_branches_long();%s%<span class="comment">//%s%di%s%%s%chc%s%chn%s%wrap</span><br/>
+<a name="319"/><span style="color:red">%s%%s%%s%319%s%%s%</span><br/>
+<a name="320"/><span style="color:red">%s%%s%%s%320%s%%s%</span>%s%%s%%s%%s%hit_invalid_addr_default();%s%%s%<span class="comment">//%s%cover%s%default/PSLVERR</span><br/>
+<a name="321"/><span style="color:red">%s%%s%%s%321%s%%s%</span>%s%%s%%s%%s%try_pready_zero();%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%%s%<span class="comment">//%s%c%s%gng%s%hit%s%nowait%s%(nu%s%DUT%s%h%s%tr)</span><br/>
+<a name="322"/><span style="color:red">%s%%s%%s%322%s%%s%</span><br/>
+<a name="323"/><span style="color:red">%s%%s%%s%323%s%%s%</span>%s%%s%%s%%s%#200%s%$finish;<br/>
+<a name="324"/><span style="color:red">%s%%s%%s%324%s%%s%</span>%s%%s%<span class="keyword">end</span><br/>
+<a name="325"/><span style="color:red">%s%%s%%s%325%s%%s%</span><br/>
+<a name="326"/><span style="color:red">%s%%s%%s%326%s%%s%</span><span class="keyword">endmodule</span><br/>
+</tt>
+<script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <!-- original name: _work.tcr_testContentFrame2.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html_newlook.css"/>
+  <script type="text/javascript" src="../scripts/jquery.js"></script>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">Questa</span> Branch Coverage Report</h1>
+  <h3>Scope: /<a href="z000017.htm">work.tcr_test</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div><a name="cvg4117"/><hr/><table>
+  <tr l="168" lnk="__HDL_srcfile_7.htm#168" z="    if ((r &amp; TCR_MASK) !== (`TCR_RST &amp; TCR_MASK)) begin" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="168" lnk="__HDL_srcfile_7.htm#168" z="    if ((r &amp; TCR_MASK) !== (`TCR_RST &amp; TCR_MASK)) begin" h="0" c="r"/>
+  <tr cr="c" t="E" l="171" lnk="__HDL_srcfile_7.htm#171" z="    end else $display("OK: TCR reset = %0h", r);" h="1" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg4118"/><hr/><table>
+  <tr l="182" lnk="__HDL_srcfile_7.htm#182" z="      if ((r &amp; TCR_MASK) !== (w &amp; TCR_MASK)) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="182" lnk="__HDL_srcfile_7.htm#182" z="      if ((r &amp; TCR_MASK) !== (w &amp; TCR_MASK)) begin" h="19" c="g"/>
+  <tr cr="c" t="A" l="182" lnk="__HDL_srcfile_7.htm#182" z="      if ((r &amp; TCR_MASK) !== (w &amp; TCR_MASK)) begin" h="1" c="g"/>
+  </table>
+  </div><div><a name="cvg4119"/><hr/><table>
+  <tr l="188" lnk="__HDL_srcfile_7.htm#188" z="      if (r[6] || r[3] || r[2]) begin" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="188" lnk="__HDL_srcfile_7.htm#188" z="      if (r[6] || r[3] || r[2]) begin" h="0" c="r"/>
+  <tr cr="c" t="A" l="188" lnk="__HDL_srcfile_7.htm#188" z="      if (r[6] || r[3] || r[2]) begin" h="20" c="g"/>
+  </table>
+  </div><div><a name="cvg4120"/><hr/><table>
+  <tr l="205" lnk="__HDL_srcfile_7.htm#205" z="    if (PSLVERR) begin" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="205" lnk="__HDL_srcfile_7.htm#205" z="    if (PSLVERR) begin" h="0" c="r"/>
+  <tr cr="c" t="A" l="205" lnk="__HDL_srcfile_7.htm#205" z="    if (PSLVERR) begin" h="1" c="g"/>
+  </table>
+  </div><div><a name="cvg4121"/><hr/><table>
+  <tr l="211" lnk="__HDL_srcfile_7.htm#211" z="    if (!PSLVERR) begin" c="Y" p="50.00"/><tr/>
+  <tr cr="c" t="I" l="211" lnk="__HDL_srcfile_7.htm#211" z="    if (!PSLVERR) begin" h="1" c="g"/>
+  <tr cr="m" t="A" l="211" lnk="__HDL_srcfile_7.htm#211" z="    if (!PSLVERR) begin" h="0" c="r"/>
+  </table>
+  </div><div><a name="cvg4122"/><hr/><table>
+  <tr l="219" lnk="__HDL_srcfile_7.htm#219" z="    if (r[1:0] !== 2'b00) begin $display("ERROR: Cks set 00 rea..." c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="219" lnk="__HDL_srcfile_7.htm#219" z="    if (r[1:0] !== 2'b00) begin $display("ERROR: Cks set 00 rea..." h="0" c="r"/>
+  <tr cr="c" t="A" l="219" lnk="__HDL_srcfile_7.htm#219" z="    if (r[1:0] !== 2'b00) begin $display("ERROR: Cks set 00 rea..." h="1" c="g"/>
+  </table>
+  </div><div><a name="cvg4123"/><hr/><table>
+  <tr l="221" lnk="__HDL_srcfile_7.htm#221" z="    if (r[1:0] !== 2'b01) begin $display("ERROR: Cks set 01 rea..." c="Y" p="50.00"/><tr/>
+  <tr cr="c" t="I" l="221" lnk="__HDL_srcfile_7.htm#221" z="    if (r[1:0] !== 2'b01) begin $display("ERROR: Cks set 01 rea..." h="1" c="g"/>
+  <tr cr="m" t="A" l="221" lnk="__HDL_srcfile_7.htm#221" z="    if (r[1:0] !== 2'b01) begin $display("ERROR: Cks set 01 rea..." h="0" c="r"/>
+  </table>
+  </div><div><a name="cvg4124"/><hr/><table>
+  <tr l="223" lnk="__HDL_srcfile_7.htm#223" z="    if (r[1:0] !== 2'b10) begin $display("ERROR: Cks set 10 rea..." c="Y" p="50.00"/><tr/>
+  <tr cr="c" t="I" l="223" lnk="__HDL_srcfile_7.htm#223" z="    if (r[1:0] !== 2'b10) begin $display("ERROR: Cks set 10 rea..." h="1" c="g"/>
+  <tr cr="m" t="A" l="223" lnk="__HDL_srcfile_7.htm#223" z="    if (r[1:0] !== 2'b10) begin $display("ERROR: Cks set 10 rea..." h="0" c="r"/>
+  </table>
+  </div><div><a name="cvg4125"/><hr/><table>
+  <tr l="225" lnk="__HDL_srcfile_7.htm#225" z="    if (r[1:0] !== 2'b11) begin $display("ERROR: Cks set 11 rea..." c="Y" p="50.00"/><tr/>
+  <tr cr="c" t="I" l="225" lnk="__HDL_srcfile_7.htm#225" z="    if (r[1:0] !== 2'b11) begin $display("ERROR: Cks set 11 rea..." h="1" c="g"/>
+  <tr cr="m" t="A" l="225" lnk="__HDL_srcfile_7.htm#225" z="    if (r[1:0] !== 2'b11) begin $display("ERROR: Cks set 11 rea..." h="0" c="r"/>
+  </table>
+  </div><div><a name="cvg4126"/><hr/><table>
+  <tr l="331" lnk="__HDL_srcfile_7.htm#331" z="    if (err_cnt == 0)" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="331" lnk="__HDL_srcfile_7.htm#331" z="    if (err_cnt == 0)" h="0" c="r"/>
+  <tr cr="c" t="E" l="333" lnk="__HDL_srcfile_7.htm#333" z="    else" h="1" c="g"/>
+  </table>
+  </div><script type="text/javascript" src="../scripts/buildbranchpage.js"></script>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>

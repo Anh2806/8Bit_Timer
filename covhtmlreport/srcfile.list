@@ -1,0 +1,15 @@
+Control_logic.v
+IP_Timer_8bit.v
+Rw_register.v
+Timer_counter.v
+countdw_forkjoin_pclk24816.v
+countup_forkjoin_pclk24816.v
+fake_over_under_flow.v
+mixed_address.v
+null_address.v
+select_clock.v
+tcr_test.v
+tdr_test.v
+tsr_test.v
+updw_reset_load_dwup_pclk2.v
+upup_pause_dwdw_pclk2.v

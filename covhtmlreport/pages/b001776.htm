@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Questa Coverage Report</title>
+  <!-- original name: _mixed_address_dut_u_apbContentFrame2.htm -->
+  <link rel="StyleSheet" media="print"  href="../css/ucdb2htmlP.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html.css"/>
+  <link rel="StyleSheet" media="screen" href="../css/ucdb2html_newlook.css"/>
+  <script type="text/javascript" src="../scripts/jquery.js"></script>
+  <script type="text/javascript" src="../scripts/showhide.js"></script>
+  
+</head>
+<body id="ucdb2html_detail" onload="showLast()">
+  <h1><span class="strip">Questa</span> Branch Coverage Report</h1>
+  <h3>Scope: /<a href="z001509.htm">mixed_address</a>/<a href="z001699.htm">dut</a>/<a href="z001776.htm">u_apb</a></h3>
+  <!-- use script block so buttons vanish when JavaScript is disabled -->
+  <script type="text/javascript">
+  <!--
+  document.write(
+    '<table class="buttons" cellspacing="2" cellpadding="2"><tr>' +
+       '<td id="showAll" width="100" onclick="showAll()" class="button_on" ' +
+           'title="Display all coverage scopes and bins.">Show All</td>' +
+       '<td id="showCov" width="100" onclick="showCov()" class="button_off" ' +
+           'title="Display only covered scopes and bins.">Show Covered</td>' +
+       '<td id="showMis" width="100" onclick="showMis()" class="button_off" ' +
+           'title="Display only uncovered scopes and bins.">Show Missing</td>' +
+    '</tr></table>');
+  //-->
+  </script>
+  <div class="covered"><a name="cvg1777"/><hr/><table>
+  <tr l="45" lnk="__HDL_srcfile_2.htm#45" z="    if (!PRESET_n) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="45" lnk="__HDL_srcfile_2.htm#45" z="    if (!PRESET_n) begin" h="2" c="g"/>
+  <tr cr="c" t="E" l="51" lnk="__HDL_srcfile_2.htm#51" z="    end else begin" h="45" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg1778"/><hr/><table>
+  <tr l="74" lnk="__HDL_srcfile_2.htm#74" z="    if (!PRESET_n) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="74" lnk="__HDL_srcfile_2.htm#74" z="    if (!PRESET_n) begin" h="2" c="g"/>
+  <tr cr="c" t="E" l="82" lnk="__HDL_srcfile_2.htm#82" z="    end else begin" h="150" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg1779"/><hr/><table>
+  <tr l="89" lnk="__HDL_srcfile_2.htm#89" z="      if (PSEL &amp;&amp; PENABLE &amp;&amp; PWRITE &amp;&amp; PREADY) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="89" lnk="__HDL_srcfile_2.htm#89" z="      if (PSEL &amp;&amp; PENABLE &amp;&amp; PWRITE &amp;&amp; PREADY) begin" h="38" c="g"/>
+  <tr cr="c" t="A" l="89" lnk="__HDL_srcfile_2.htm#89" z="      if (PSEL &amp;&amp; PENABLE &amp;&amp; PWRITE &amp;&amp; PREADY) begin" h="112" c="g"/>
+  </table>
+  </div><div><a name="cvg1780"/><hr/><table>
+  <tr l="93" lnk="__HDL_srcfile_2.htm#93" z="        case (PADDR)" c="Y" p="75.00"/><tr/>
+  <tr cr="c" t="T" l="94" lnk="__HDL_srcfile_2.htm#94" z="          `TDR_ADDR: begin" h="3" c="g"/>
+  <tr cr="c" t="T" l="99" lnk="__HDL_srcfile_2.htm#99" z="          `TCR_ADDR: begin" h="16" c="g"/>
+  <tr cr="m" t="T" l="104" lnk="__HDL_srcfile_2.htm#104" z="          `TSR_ADDR: begin" h="0" c="r"/>
+  <tr cr="c" t="T" l="109" lnk="__HDL_srcfile_2.htm#109" z="          default: begin" h="19" c="g"/>
+  </table>
+  </div><div><a name="cvg1781"/><hr/><table>
+  <tr l="117" lnk="__HDL_srcfile_2.htm#117" z="      if (Set_OVF_pulse) tsr_next[`TMR_OVF_bit] = 1'b1;" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="117" lnk="__HDL_srcfile_2.htm#117" z="      if (Set_OVF_pulse) tsr_next[`TMR_OVF_bit] = 1'b1;" h="0" c="r"/>
+  <tr cr="c" t="A" l="117" lnk="__HDL_srcfile_2.htm#117" z="      if (Set_OVF_pulse) tsr_next[`TMR_OVF_bit] = 1'b1;" h="150" c="g"/>
+  </table>
+  </div><div><a name="cvg1782"/><hr/><table>
+  <tr l="118" lnk="__HDL_srcfile_2.htm#118" z="      if (Set_UDF_pulse) tsr_next[`TMR_UDF_bit] = 1'b1;" c="Y" p="50.00"/><tr/>
+  <tr cr="m" t="I" l="118" lnk="__HDL_srcfile_2.htm#118" z="      if (Set_UDF_pulse) tsr_next[`TMR_UDF_bit] = 1'b1;" h="0" c="r"/>
+  <tr cr="c" t="A" l="118" lnk="__HDL_srcfile_2.htm#118" z="      if (Set_UDF_pulse) tsr_next[`TMR_UDF_bit] = 1'b1;" h="150" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg1783"/><hr/><table>
+  <tr l="124" lnk="__HDL_srcfile_2.htm#124" z="      if (tdr_wr_pulse_r) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="124" lnk="__HDL_srcfile_2.htm#124" z="      if (tdr_wr_pulse_r) begin" h="3" c="g"/>
+  <tr cr="c" t="A" l="124" lnk="__HDL_srcfile_2.htm#124" z="      if (tdr_wr_pulse_r) begin" h="147" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg1784"/><hr/><table>
+  <tr l="132" lnk="__HDL_srcfile_2.htm#132" z="    case (PADDR)" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="T" l="133" lnk="__HDL_srcfile_2.htm#133" z="      `TDR_ADDR:  PRDATA_next = TDR_reg;" h="10" c="g"/>
+  <tr cr="c" t="T" l="134" lnk="__HDL_srcfile_2.htm#134" z="      `TCR_ADDR:  PRDATA_next = TCR_reg;" h="30" c="g"/>
+  <tr cr="c" t="T" l="135" lnk="__HDL_srcfile_2.htm#135" z="      `TSR_ADDR:  PRDATA_next = TSR_reg;" h="2" c="g"/>
+  <tr cr="c" t="T" l="136" lnk="__HDL_srcfile_2.htm#136" z="      `TCNT_ADDR: PRDATA_next = TCNT_Out;" h="13" c="g"/>
+  <tr cr="c" t="T" l="137" lnk="__HDL_srcfile_2.htm#137" z="      default:    PRDATA_next = {DATA_WIDTH{1'b0}};" h="21" c="g"/>
+  </table>
+  </div><div class="covered"><a name="cvg1785"/><hr/><table>
+  <tr l="143" lnk="__HDL_srcfile_2.htm#143" z="    if (!PRESET_n) begin" c="G" p="100.00"/><tr/>
+  <tr cr="c" t="I" l="143" lnk="__HDL_srcfile_2.htm#143" z="    if (!PRESET_n) begin" h="2" c="g"/>
+  <tr cr="c" t="T" l="146" lnk="__HDL_srcfile_2.htm#146" z="      if (PSEL &amp;&amp; PENABLE &amp;&amp; !PWRITE &amp;&amp; PREADY) begin" h="11" c="g"/>
+  <tr cr="c" t="A" l="143" lnk="__HDL_srcfile_2.htm#143" z="    if (!PRESET_n) begin" h="141" c="g"/>
+  </table>
+  </div><script type="text/javascript" src="../scripts/buildbranchpage.js"></script>
+  <!-- make sure jumps to last few line nos work -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</body>
+</html>

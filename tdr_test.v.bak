@@ -1,0 +1,116 @@
+module tdr_test;
+`include "Def_name.v"
+`ifndef DATA_WIDTH
+`define DATA_WIDTH = 8
+`endif
+
+
+localparam ADDR_WIDTH = 8;
+
+    // APB signals
+    reg PCLK;
+    reg PRESET_n;
+    reg PSEL;
+    reg PWRITE;
+    reg PENABLE;
+    reg [ADDR_WIDTH-1:0] PADDR;
+    reg [`DATA_WIDTH-1:0] PWDATA;
+    wire [`DATA_WIDTH-1:0] PRDATA;
+    wire PREADY;
+    wire PSLVERR;
+    wire TMR_OVF;
+    wire TMR_URF;
+
+timer_top #(.ADDR_WIDTH(ADDR_WIDTH)) dut(
+    .PCLK(PCLK),
+    .PRESET_n(PRESET_n),
+    .PSEL(PSEL),
+    .PWRITE(PWRITE),
+    .PENABLE(PENABLE),
+    .PADDR(PADDR),
+    .PWDATA(PWDATA),
+    .PREADY(PREADY),
+    .PSLVERR(PSLVERR),
+    .TMR_OVF(TMR_OVF),
+    .TMR_URF(TMR_URF)
+    );
+    //Clock/rest
+    initial begin
+        PCLK = 0;
+        forever #5 PCLK = ~PCLK;
+    end
+    task do_reset();
+        begin 
+            PRESET_n = 0;
+            PSEL = 0;
+            PWRITE = 0;
+            PENABLE = '0;
+            PADDR = '0;
+            repeat (5) @(posedge PCLK);
+            PRESET_n =1;
+            repeat (2) @(posedge PCLK);
+        end
+    endtask
+
+    task apb_write(input [ADDR_WIDTH-1:0] addr, input [`DATA_WIDTH-1:0] data_in);
+        begin
+            @(posedge PCLK);
+            PADDR <= addr;
+            PWDATA <= data_in;
+            PWRITE <= 1'b1;
+            PSEL <= 1'b1;
+            PENABLE <= 1'b0;
+            @(posedge PCLK);
+            PENABLE <= 1'b1;
+            while (!PREADY)@(posedge PCLK);
+            @(posedge PCLK);
+            PSEL <= 1'b0;
+            PWRITE <= 1'b0;
+            PENABLE <= 1'b0;
+        end
+    endtask
+
+    task apb_read (input [ADDR_WIDTH-1:0] addr, input [`DATA_WIDTH-1:0]data_out);
+        begin
+            @(posedge PCLK);
+            PADDR <= addr;
+            PWRITE <= 1'b0;
+            PSEL <= 1'b1;
+            PENABLE <= 1'b0;
+            @(posedge PCLK);
+            PENABLE <= 1'b1;
+            while (!PREADY) @(posedge PCLK);
+            data_out <= PRDATA;
+            @(posedge PCLK);
+            PSEL <= 1'b0;
+            PENABLE <= 1'b0;
+        end
+    endtask
+    function [`DATA_WIDTH-1:0] rand8(input dummy);
+        rand8 = $random;
+    endfunction
+reg [`DATA_WIDTH-1:0] r;
+reg [`DATA_WIDTH-1:0] w;
+integer i;
+initial begin
+    do_reset();
+
+    apb_read(`TDR_ADDR, r);
+    if(r !== `TDR_RST) begin
+        $error("TDR default mismatch : got %0h exp %0h", r, `TDR_RST);
+    end
+    
+    for( i = 0; i < 20; i=i+1) begin
+        w = rand8(0);
+        apb_write(`TDR_ADDR, w);
+        apb_read(`TDR_ADDR, r);
+        if(r !== w)begin
+            $error("TDR R/W mismatch iter %0d: wrote %0h read %0h", i, w, r);
+            $stop;
+        end
+    end
+    $display ("TDR read/write test: PASS");
+    #50 $finish;
+end
+
+endmodule

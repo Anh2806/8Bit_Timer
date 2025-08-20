@@ -1,0 +1,12 @@
+Merging file cov/tdr_test.ucdb
+Merging file cov/tcr_test.ucdb
+Merging file cov/tsr_test.ucdb
+Merging file cov/null_address.ucdb
+Merging file cov/mixed_address.ucdb
+Merging file cov/fake_over_under_flow.ucdb
+Merging file cov/updw_reset_load_dwup_pclk2.ucdb
+Merging file cov/upup_pause_dwdw_pclk2.ucdb
+Merging file cov/countup_forkjoin_pclk2.ucdb
+Merging file cov/countdw_forkjoin_pclk2.ucdb
+Writing merged result to coverage_all.ucdb
+

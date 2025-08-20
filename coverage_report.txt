@@ -1,0 +1,2 @@
+Couldn't open file cover_<TOP_MODULE>.ucdb in read mode.
+** Error: (vcover-6805) Couldn't open file cover_<TOP_MODULE>.ucdb in read mode.

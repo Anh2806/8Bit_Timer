@@ -1,0 +1,113 @@
+C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/countdw_forkjoin_pclk24816.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/countdw_forkjoin_pclk24816.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module countdw_forkjoin_pclk2
+
+Top level modules:
+	countdw_forkjoin_pclk2
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/mixed_address.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/mixed_address.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module mixed_address
+
+Top level modules:
+	mixed_address
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Rw_register.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Rw_register.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module Rw_register
+
+Top level modules:
+	Rw_register
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/countup_forkjoin_pclk24816.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/countup_forkjoin_pclk24816.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module countup_forkjoin_pclk2
+
+Top level modules:
+	countup_forkjoin_pclk2
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/fake_over_under_flow.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/fake_over_under_flow.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module fake_over_under_flow
+
+Top level modules:
+	fake_over_under_flow
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/upup_pause_dwdw_pclk2.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/upup_pause_dwdw_pclk2.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module upup_pause_dwdw_pclk2
+
+Top level modules:
+	upup_pause_dwdw_pclk2
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/IP_Timer_8bit.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/IP_Timer_8bit.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module Rw_register
+-- Compiling module control_logic
+-- Compiling module select_clock
+-- Compiling module timer_counter
+-- Compiling module timer_top
+
+Top level modules:
+	timer_top
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Def_name.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Def_name.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/updw_reset_load_dwup_pclk2.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/updw_reset_load_dwup_pclk2.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module updw_reset_load_dwup_pclk2
+
+Top level modules:
+	updw_reset_load_dwup_pclk2
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/select_clock.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/select_clock.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module select_clock
+
+Top level modules:
+	select_clock
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Control_logic.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Control_logic.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module control_logic
+
+Top level modules:
+	control_logic
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tsr_test.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tsr_test.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module tsr_test
+
+Top level modules:
+	tsr_test
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Timer_counter.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/Timer_counter.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module timer_counter
+
+Top level modules:
+	timer_counter
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/null_address.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/null_address.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module null_address
+
+Top level modules:
+	null_address
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tcr_test.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tcr_test.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module tcr_test
+
+Top level modules:
+	tcr_test
+
+} {} {}} C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tdr_test.v {1 {vlog -work work -vopt C:/Users/ADMIN/Downloads/Bai_CK_15_6_2025/tdr_test.v
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module tdr_test
+
+Top level modules:
+	tdr_test
+
+} {} {}}

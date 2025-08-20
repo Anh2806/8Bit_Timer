@@ -1,0 +1,46 @@
+# vsim -coverage -do {coverage save -onexit -directive -codeAll {cov/countdw_forkjoin_pclk2.ucdb}; run -all; quit -f} -c work.countdw_forkjoin_pclk2 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.countdw_forkjoin_pclk2(fast)
+# Loading work.Rw_register(fast)
+# Loading work.control_logic(fast)
+# Loading work.select_clock(fast)
+# Loading work.timer_counter(fast)
+# coverage save -onexit -directive -codeAll {cov/countdw_forkjoin_pclk2.ucdb} 
+#  run -all 
+# 
+# --- COUNTDOWN: CKS=00 factor=2 start=161 pulses=324 ---
+# T2 PASS TSR=0x0
+# T1 FAIL TSR=0x0
+# 
+# --- COUNTDOWN: CKS=01 factor=4 start=88 pulses=356 ---
+# T2 PASS TSR=0x0
+# T1 FAIL TSR=0x0
+# 
+# --- COUNTDOWN: CKS=10 factor=8 start=106 pulses=856 ---
+# T2 PASS TSR=0x0
+# T1 FAIL TSR=0x0
+# 
+# --- COUNTDOWN: CKS=11 factor=16 start=146 pulses=2352 ---
+# T2 PASS TSR=0x0
+# T1 PASS TSR=0x2
+# 
+# --- invalid write (default path) ---
+# After invalid write: PRDATA=0x0 PSLVERR=0
+# 
+# --- hit TCR LOAD=1 branch + read TCNT ---
+# TCNT read (once) PRDATA=0x0
+# 
+# [SUMMARY] Tests finished with err_cnt=3
+# ** Note: $finish    : countdw_forkjoin_pclk24816.v(285)
+#    Time: 40505 ns  Iteration: 0  Instance: /countdw_forkjoin_pclk2
